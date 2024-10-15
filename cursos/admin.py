@@ -8,7 +8,7 @@ class StackAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 class CoursesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'link', 'professor', 'data', 'stack',)
+    list_display = ('title', 'link', 'professor', 'data', 'stack', 'image',)
     search_fields = ('title', 'link', 'professor', 'data', 'stack',)
 
 
