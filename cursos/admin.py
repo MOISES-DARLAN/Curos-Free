@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cursos.models import course
+from cursos.models import Course
 from cursos.models import StackCourse
 
 
@@ -13,4 +13,4 @@ class CoursesAdmin(admin.ModelAdmin):
 
 
 admin.site.register(StackCourse, StackAdmin)
-admin.site.register(course, CoursesAdmin)
+admin.site.register(Course, CoursesAdmin)
