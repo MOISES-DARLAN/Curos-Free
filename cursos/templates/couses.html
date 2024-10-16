@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+</head>
+<body>
+    <h1>Lista de Cursos</h1>
+    <ul>
+        {% for curso in courses %}
+            <li>
+                <h2>{{ curso.title }}</h2>
+                <p>Professor: {{ curso.professor }}</p>
+                <p>Data: {{ curso.data }}</p>
+                <p><a href="{{ curso.link }}">Acessar Curso</a></p>
+                <img src="{{ curso.image }}" alt="Imagem do Curso">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
