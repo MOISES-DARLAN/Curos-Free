@@ -19,9 +19,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from cursos.views import course_view
+from cursos.views import courses_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cursos/', course_view)
+    path('cursos/', courses_view)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

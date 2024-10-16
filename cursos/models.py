@@ -16,4 +16,5 @@ class Course(models.Model):
     professor = models.CharField(max_length=200, null=True, blank=True)  
     data = models.DateField(auto_now=True)
     def __str__(self):
+        
         return self.title

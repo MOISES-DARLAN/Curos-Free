@@ -2,10 +2,14 @@ from django.shortcuts import render
 from cursos.models import Course
 # Create your views here.
 
-def course_view(request):
+def courses_view(request):
     cursos = Course.objects.all()
-    print(cursos)
+    search = request.GET.get('search')
+
+    if search:
+        cursos = cursos.filter(stack__name__icontains=search)
+
     return render(request,
                 'couses.html',
-                 {'courses':  cursos}
-             )
+                {'courses':  cursos}
+            )
