@@ -57,8 +57,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="">
-                <i class="fas fa-graduation-cap"></i> Django Cursos
+            <a class="navbar-brand" href="
+{% url 'cursos' %}">
+                <i class="fas fa-graduation-cap"></i> Free Cursos
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,7 +70,7 @@
                         <a class="nav-link" href="">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Cursos</a>
+                        <a class="nav-link" href="{% url 'cursos' %}">Cursos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Sobre</a>
@@ -79,7 +80,7 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="">Meu Painel</a>
+                            <a class="nav-link" href="{% url 'new_course' %}">Meu Painel</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">Sair</a>
@@ -106,8 +107,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>Django Cursos</h5>
-                    <p>Aprenda Django de forma fácil e eficiente.</p>
+                    <h5>Free Cursos</h5>
+                    <p>Aprenda de forma fácil e eficiente.</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Links Rápidos</h5>
@@ -128,7 +129,7 @@
             </div>
             <hr class="bg-light">
             <div class="text-center">
-                <p>&copy; 2023 Django Cursos. Todos os direitos reservados.</p>
+                <p>&copy; 2024 Free Cursos. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
