@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login, authenticate 
+from django.contrib.auth import login, authenticate , logout
 import time
 
 def register_view(request):
@@ -35,7 +35,9 @@ def login_view(request):
 
     return render(request, 'login.html', {'login_form': login_form})
    
-  
+def logout_view(request):
+    logout(request)
+    return redirect('login')
 
 
     

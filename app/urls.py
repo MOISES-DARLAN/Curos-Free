@@ -20,7 +20,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from cursos.views import courses_view, new_course_view
-from acounts.views import register_view, login_view
+from acounts.views import register_view, login_view, logout_view
 
 
 urlpatterns = [
@@ -28,5 +28,6 @@ urlpatterns = [
     path('cursos/', courses_view, name='cursos'),
     path('new_course/', new_course_view, name='new_course'),
     path('register/', register_view, name='register'),
-    path('login/', login_view, name='login')
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
