@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, authenticate 
+import time
 
 def register_view(request):
     if request.method == 'POST':
         user_form = UserCreationForm(request.POST)
         if user_form.is_valid():
             user_form.save()
-            return redirect('login/')
+            return redirect('login')
     
     else:
         user_form = UserCreationForm()
@@ -14,8 +16,27 @@ def register_view(request):
     return render(request, 'register.html', {'user_form': user_form})
 
 
-def login_view(request):
+def login_view(request):    
     if request.method == 'POST' :
-        pass
-    login_form = AuthenticationForm()
+        username = request.POST['username']
+        password = request.POST['password']
+        print(username, password)
+        user = authenticate(request=request, username=username, password=password)
+
+        if user is not None:
+            login(request, user=user)
+            return redirect('cursos')
+        
+        else:
+            login_form = AuthenticationForm()
+
+    else:
+        login_form = AuthenticationForm()
+
     return render(request, 'login.html', {'login_form': login_form})
+   
+  
+
+
+    
+
